@@ -46,7 +46,7 @@ Downloading the subtitles for episode 119 of Running Man.
 
 1. Go to DramaFever's "Running Man" page.
 2. You will see the following in your browser's address bar: `http://www.dramafever.com/drama/3970/Running_Man/`.
-Copy the or remember the show's ID (3970).
+Copy or remember the show's ID (3970).
 3. Execute the following command to download the subtitles as TTML:
 
 ```
