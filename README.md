@@ -13,28 +13,32 @@ commonly used [SRT](http://en.wikipedia.org/wiki/SubRip) subtitle format.
 
 You can download and install these modules from [PyPi](https://pypi.python.org/pypi) with `pip`:
 
-  pip install requests
-  pip install beautifulsoup4
+```
+pip install requests
+pip install beautifulsoup4
+```
 
 or by going to the respective module's website.
 
 # Usage
 
-  usage: dfrip.py [-h] [-f {srt,ttml,xml}] [-o FILENAME] [-v] SERIES EPISODE
-  Download subtitles from DramaFever and convert them into TTML or SRT.
-  
-  positional arguments:
-    SERIES                the ID of the series (usually four-digit number)
-    EPISODE               the number of the episode
+```
+usage: dfrip.py [-h] [-f {srt,ttml,xml}] [-o FILENAME] [-v] SERIES EPISODE
+Download subtitles from DramaFever and convert them into TTML or SRT.
 
-  optional arguments:
-    -h, --help            show this help message and exit
-    -f {srt,ttml,xml}, --format {srt,ttml,xml}
-                          the format the subtitles will be saved in (default:
-                          xml)
-    -o FILENAME, --out FILENAME
-                          location of the output file or filename (default: .)
-    -v, --verbose         increases output verbosity (default: False)
+positional arguments:
+  SERIES                the ID of the series (usually four-digit number)
+  EPISODE               the number of the episode
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f {srt,ttml,xml}, --format {srt,ttml,xml}
+                        the format the subtitles will be saved in (default:
+                        xml)
+  -o FILENAME, --out FILENAME
+                        location of the output file or filename (default: .)
+  -v, --verbose         increases output verbosity (default: False)
+```
 
 # Examples
 
@@ -45,14 +49,18 @@ Downloading the subtitles for episode 119 of Running Man.
 Copy the or remember the show's ID (3970).
 3. Execute the following command to download the subtitles as TTML:
 
-  ./dfrip.py 3970 119
-  
+```
+./dfrip.py 3970 119
+```
 
 Download the subtitles as SRT:
 
-  ./dfrip.py 3970 119 -f srt
+```
+./dfrip.py 3970 119 -f srt
+```
   
 Download the subtitles to "running_man-119.srt" and show additional infos about the show:
 
-  ./dfrip.py 3970 119 -v -f srt -o "running_man-119.srt"
-  
+```
+./dfrip.py 3970 119 -v -f srt -o "running_man-119.srt"
+```
