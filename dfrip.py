@@ -93,7 +93,7 @@ if __name__ == "__main__":
         print("Error: " + str(e))
         quit()
 
-    print("Series: %s, %s" % (series["name"], series["native_lang_title"]))
+    print("Series: %s, %s" % (series["name"].encode("utf-8"), series["native_lang_title"].encode("utf-8")))
     if args.verbose:
         print("Description: " + series["description_short"])
         print("URL: http://www.dramafever.com" + series["www_url"])
