@@ -18,6 +18,12 @@ pip install requests
 pip install beautifulsoup4
 ```
 
+or 
+
+```
+pip install -r requirements.txt
+```
+
 or by going to the respective module's website.
 
 # Usage
