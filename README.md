@@ -1,5 +1,5 @@
-DramaFever Subtitle Ripper
-==========================
+DramaFever Subtitle Ripper (DFRip)
+==================================
 
 Easily download subtitle files for your favorite shows from [DramaFever](http://www.dramafever.com/).
 You can either keep them in the original [TTML](http://www.w3.org/TR/ttaf1-dfxp/) format or convert them to the more 
