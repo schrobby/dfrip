@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+__version__ = "0.1"
 
 from os import path
 from bs4 import BeautifulSoup
@@ -46,8 +47,8 @@ def download_file_to(url, file_path):
     return file_path
 
 def save_to_disk(filename, content):
-    with open(filename, "w") as f:
-        f.write(content)
+    with open(filename, "wb") as f:
+        f.write(content.encode("utf-8"))
 
 def xml_to_srt(xml_subs):
     # XML to SRT Python implementation inspired by Hubwub's PyXMLtoSRT
@@ -86,6 +87,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    if args.verbose: print("DramaFever Subtitle Ripper v" + __version__)
+
     try:
         series = get_series(args.series_id)
         subs_url = get_subs_url(args.series_id, args.episode_num)
@@ -95,8 +98,8 @@ if __name__ == "__main__":
 
     print("Series: %s, %s" % (series["name"].encode("utf-8"), series["native_lang_title"].encode("utf-8")))
     if args.verbose:
-        print("Description: " + series["description_short"])
-        print("URL: http://www.dramafever.com" + series["www_url"])
+        print("Description: " + series["description_short"].encode("utf-8"))
+        print("URL: http://www.dramafever.com" + series["www_url"].encode("utf-8"))
 
     print("\nDownloading subtitle file ...")
     subs = download_subs(subs_url)
