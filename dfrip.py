@@ -1,12 +1,14 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-__version__ = "0.1"
 
+from __future__ import unicode_literals
 from os import path
 from bs4 import BeautifulSoup
 import requests
 import json
 import re
+
+__version__ = "0.1"
 
 API_BASE = "http://www.dramafever.com/api/4"
 API_CS_V4 = "DA59dtVXYLxajktV"
@@ -37,7 +39,7 @@ def get_subs_url(series_id, episode_num, lang="en", format="dfxp", file_format="
 
 def download_subs(url):
     r = requests.get(url)
-    return str(r.content)
+    return r.text
 
 def download_file_to(url, file_path):
     r = requests.get(url, stream=True)
@@ -94,14 +96,14 @@ if __name__ == "__main__":
     try:
         series = get_series(args.series_id)
         subs_url = get_subs_url(args.series_id, args.episode_num)
-    except ValueError, e:
+    except (ValueError, e):
         print("Error: " + str(e))
         quit()
 
-    print("Series: %s, %s" % (series["name"].encode("utf-8"), series["native_lang_title"].encode("utf-8")))
+    print("Series: %s, %s" % (series["name"], series["native_lang_title"]))
     if args.verbose:
-        print("Description: " + series["description_short"].encode("utf-8"))
-        print("URL: http://www.dramafever.com" + series["www_url"].encode("utf-8"))
+        print("Description: " + series["description_short"])
+        print("URL: http://www.dramafever.com" + series["www_url"])
 
     print("\nDownloading subtitle file ...")
     subs = download_subs(subs_url)
