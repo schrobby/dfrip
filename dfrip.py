@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 __version__ = "0.1"
 
@@ -31,7 +31,9 @@ def get_series(series_id):
 def get_subs_url(series_id, episode_num, lang="en", format="dfxp", file_format="dfxp"):
     response = api_call("/episode/subtitle/", series_id=series_id, number=episode_num, \
         lang=lang, format=format, file_format=file_format)
-    return response["url"]
+    if not response["url"]:
+        raise ValueError("The subtitles for this episode are currently being worked on")
+    else: return response["url"]
 
 def download_subs(url):
     r = requests.get(url)
