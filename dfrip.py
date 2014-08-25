@@ -96,7 +96,7 @@ if __name__ == "__main__":
     try:
         series = get_series(args.series_id)
         subs_url = get_subs_url(args.series_id, args.episode_num)
-    except (ValueError, e):
+    except ValueError as e:
         print("Error: " + str(e))
         quit()
 
