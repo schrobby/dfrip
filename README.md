@@ -7,7 +7,7 @@ commonly used [SRT](http://en.wikipedia.org/wiki/SubRip) subtitle format.
 
 # Requirements
 
-* Python 2.7.x
+* [Python 2 or 3](https://www.python.org/)
 * [requests](http://docs.python-requests.org/en/latest/)
 * [BeautifulSoup 4](http://www.crummy.com/software/BeautifulSoup/)
 
